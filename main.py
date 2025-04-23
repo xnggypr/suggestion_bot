@@ -18,7 +18,7 @@ ADMIN_IDS = [int(i) for i in os.getenv("ADMIN_IDS", "").split(",") if i]
 WEBHOOK_URL = os.getenv("WEBHOOK_URL")
 WEBHOOK_PATH = "/webhook"
 WEBAPP_HOST = "0.0.0.0"
-WEBAPP_PORT = int(os.environ.get("PORT", 5000))
+WEBAPP_PORT = int(os.environ.get("PORT", 10000))
 
 bot = Bot(token=BOT_TOKEN, parse_mode=types.ParseMode.HTML)
 dp = Dispatcher(bot, storage=MemoryStorage())
