@@ -9,6 +9,8 @@ import keyboards
 import asyncio
 from datetime import datetime
 
+__all__ = ["register", "notify_authors"]
+
 class SuggestionFSM(StatesGroup):
     waiting_for_text = State()
 
@@ -311,4 +313,4 @@ def register(dp: Dispatcher, admin_ids, channel_username):
         await msg.answer(text)
         
     # -------- Уведомления авторам статусов идей --------
-    dp.loop.create_task(notify_authors(dp.bot)) # автозапуск при старте
+    # Функция notify_authors экспортируется и запускается из main.py
